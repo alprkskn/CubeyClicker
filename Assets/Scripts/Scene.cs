@@ -7,12 +7,12 @@ public class Scene : MonoBehaviour
     [SerializeField] private CubeProperties cubeProps;
     [SerializeField] private OrbitMovement cameraMovement;
     [SerializeField] private TextUpdater counterText;
+    [SerializeField] private float hitMagnitude;
     [SerializeField] private InputManager input;
     [SerializeField] private Camera mainCamera;
 
     private Cube cube;
     private int hitCount;
-    private float hitMagnitude;
 
     private void Awake()
     {
@@ -83,7 +83,7 @@ public class Scene : MonoBehaviour
 
             if (cube)
             {
-                cube.Hit(hit.point, hit.normal, r.direction, 10f);
+                cube.Hit(hit.point, hit.normal, r.direction, this.hitMagnitude);
                 this.hitCount++;
                 this.counterText.SetText(this.hitCount.ToString());
             }
