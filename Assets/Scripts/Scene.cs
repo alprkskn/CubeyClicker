@@ -86,7 +86,7 @@ public class Scene : MonoBehaviour
 
             if (cube)
             {
-                cube.Hit(hit.point, r.direction, 10f);
+                cube.Hit(hit.point, hit.normal, r.direction, 10f);
                 _hitCount++;
                 _counterText.SetText(_hitCount.ToString());
             }

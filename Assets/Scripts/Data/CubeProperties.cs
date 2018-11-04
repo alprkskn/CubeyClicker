@@ -13,5 +13,10 @@ public class CubeProperties : ScriptableObject
     #region Visual Properties
     public Material Material;
     public GameObject Particles;
+
+    public AnimationCurve FeedbackScaleCurve;
+    public AnimationCurve FeedbackEmissionCurve;
+    public Color EmissionColor;
     #endregion
+
 }
