@@ -7,25 +7,25 @@ public class InputManager : MonoBehaviour
     public event Action<Vector3> Drag;
     public event Action<float> Zoom;
 
-    private const string MouseWheelAxis = "Mouse ScrollWheel";
-    private const float DragStartThreshold = 100;
     private const float ClickDistanceThresholdSqr = 100;
+    private const float DragStartThreshold = 100;
+    private const string MouseWheelAxis = "Mouse ScrollWheel";
     private const float ZoomChangeThreshold = 0f;
 
-    private bool _ptrDown;
-    private bool _dragStarted;
-    private Vector3 _ptrDownPos;
-    private Vector3 _prevMousePos;
-    private float _prevZoomValue;
-    private DateTime _ptrDownTime;
+    private bool dragStarted;
+    private Vector3 prevMousePos;
+    private float prevZoomValue;
+    private bool ptrDown;
+    private Vector3 ptrDownPos;
+    private DateTime ptrDownTime;
 
     void Update()
     {
         var mousePos = Input.mousePosition;
 
-        if (_ptrDown)
+        if (this.ptrDown)
         {
-            var delta = mousePos - _ptrDownPos;
+            var delta = mousePos - this.ptrDownPos;
 
             if (Input.GetMouseButtonUp(0))
             {
@@ -34,19 +34,19 @@ public class InputManager : MonoBehaviour
                     if (Click != null) Click(mousePos);
                 }
 
-                _ptrDown = false;
-                _dragStarted = false;
+                this.ptrDown = false;
+                this.dragStarted = false;
             }
             else
             {
-                if(!_dragStarted && delta.sqrMagnitude >= DragStartThreshold)
+                if(!this.dragStarted && delta.sqrMagnitude >= DragStartThreshold)
                 {
-                    _dragStarted = true;
+                    this.dragStarted = true;
                 }
 
-                if(_dragStarted)
+                if(this.dragStarted)
                 {
-                    if (Drag != null) Drag(_prevMousePos - mousePos);
+                    if (Drag != null) Drag(this.prevMousePos - mousePos);
                 }
             }
         }
@@ -54,8 +54,8 @@ public class InputManager : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                _ptrDown = true;
-                _ptrDownPos = mousePos;
+                this.ptrDown = true;
+                this.ptrDownPos = mousePos;
             }
         }
 
@@ -66,7 +66,7 @@ public class InputManager : MonoBehaviour
             if (Zoom != null) Zoom(zoom);
         }
 
-        _prevZoomValue = zoom;
-        _prevMousePos = mousePos;
+        this.prevZoomValue = zoom;
+        this.prevMousePos = mousePos;
     }
 }

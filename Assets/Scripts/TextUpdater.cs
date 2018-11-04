@@ -4,38 +4,38 @@ using UnityEngine.UI;
 
 public class TextUpdater : MonoBehaviour
 {
-    [SerializeField] private AnimationCurve _bounceAnim;
-    private Text _text;
+    [SerializeField] private AnimationCurve bounceAnim;
 
-    private float _t;
-    private float _decayRate = 0.1f;
-    private Coroutine _bounceCoroutine;
+    private Coroutine bounceCoroutine;
+    private float decayRate = 0.1f;
+    private float t; // Current tween state. Between 0.0 and 1.0
+    private Text text;
 
     private void Awake()
     {
-        _text = GetComponent<Text>();
-        _t = 0;
+        this.text = GetComponent<Text>();
+        this.t = 0;
     }
 
     public string Text
     {
-        get { return _text.text; }
+        get { return this.text.text; }
     }
 
     public void SetText(string value, bool bounce = true)
     {
-        _text.text = value;
+        this.text.text = value;
         Bounce();
     }
 
     void Bounce()
     {
-        if(_bounceCoroutine != null)
+        if(this.bounceCoroutine != null)
         {
-            StopCoroutine(_bounceCoroutine);
+            StopCoroutine(this.bounceCoroutine);
         }
 
-        _bounceCoroutine = StartCoroutine(BounceCoroutine(0.1f));
+        this.bounceCoroutine = StartCoroutine(BounceCoroutine(0.1f));
     }
 
     IEnumerator BounceCoroutine(float duration)
@@ -44,7 +44,7 @@ public class TextUpdater : MonoBehaviour
 
         while(timer < duration)
         {
-            var size = _bounceAnim.Evaluate(timer / duration);
+            var size = this.bounceAnim.Evaluate(timer / duration);
             transform.localScale = Vector3.one * (1f + size);
             yield return null;
             timer += Time.deltaTime;

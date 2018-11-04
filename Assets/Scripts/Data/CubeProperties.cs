@@ -3,20 +3,19 @@
 [CreateAssetMenu(fileName = "CubePropery", menuName = "Cube/Property")]
 public class CubeProperties : ScriptableObject
 {
-    public float Size;
+    public float size;
 
     #region Physical Properties
-    public float Mass;
-    public float AngularDrag;
+    public float angularDrag;
+    public float mass;
     #endregion
 
     #region Visual Properties
-    public Material Material;
-    public GameObject Particles;
-
-    public AnimationCurve FeedbackScaleCurve;
-    public AnimationCurve FeedbackEmissionCurve;
-    public Color EmissionColor;
+    public Color emissionColor;
+    public AnimationCurve feedbackScaleCurve;
+    public AnimationCurve feedbackEmissionCurve;
+    public Material material;
+    public GameObject particles;
     #endregion
 
 }
