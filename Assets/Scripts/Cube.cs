@@ -3,6 +3,12 @@
 public class Cube : MonoBehaviour
 {
     private Rigidbody _rigidbody;
+    private CubeProperties _properties;
+
+    public void SetProperties(CubeProperties props)
+    {
+        _properties = props;
+    }
 
     private void Awake()
     {

@@ -12,5 +12,6 @@ public class CubeProperties : ScriptableObject
 
     #region Visual Properties
     public Material Material;
+    public GameObject Particles;
     #endregion
 }

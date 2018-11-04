@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class Scene : MonoBehaviour
 {
@@ -8,8 +9,13 @@ public class Scene : MonoBehaviour
 
     [SerializeField] private Camera _mainCamera;
     [SerializeField] private OrbitMovement _cameraMovement;
+    [SerializeField]private TextUpdater _counterText;
 
     private Cube _cube;
+
+
+    private int _hitCount;
+    private float _hitMagnitude;
 
     private void Awake()
     {
@@ -23,6 +29,7 @@ public class Scene : MonoBehaviour
     private void Start()
     {
         _cameraMovement.SetPosition(Vector2.zero, new Vector2(45, 45), 6f);
+        _counterText.SetText(_hitCount.ToString(), false);
     }
 
     private void OnDestroy()
@@ -50,6 +57,7 @@ public class Scene : MonoBehaviour
         rigidbody.constraints = RigidbodyConstraints.FreezePosition;
 
         var cube = go.AddComponent<Cube>();
+        cube.SetProperties(properties);
 
         return cube;
     }
@@ -61,13 +69,9 @@ public class Scene : MonoBehaviour
 
     private void OnDrag(Vector3 dragVector)
     {
-        _cameraMovement.UpdatePosition(new Vector2(dragVector.y, -dragVector.x), 0);
         if (Input.GetMouseButton(2))
         {
-        }
-        else
-        {
-            //TODO: Rotate cube
+            _cameraMovement.UpdatePosition(new Vector2(dragVector.y, -dragVector.x), 0);
         }
     }
 
@@ -83,6 +87,8 @@ public class Scene : MonoBehaviour
             if (cube)
             {
                 cube.Hit(hit.point, r.direction, 10f);
+                _hitCount++;
+                _counterText.SetText(_hitCount.ToString());
             }
         }
     }

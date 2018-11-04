@@ -11,8 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b7931a62bb82204882fa3dfc51d530e, type: 3}
   m_Name: DefaultCubePropery
   m_EditorClassIdentifier: 
-  SegmentCount: 0
   Size: 2
   Mass: 3
-  AngularDrag: 0.8
+  AngularDrag: 3
   Material: {fileID: 2100000, guid: 6e6b8f960ef59e047908b5f732c2acdb, type: 2}
