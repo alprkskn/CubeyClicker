@@ -3,7 +3,6 @@
 [CreateAssetMenu(fileName = "CubePropery", menuName = "Cube/Property")]
 public class CubeProperties : ScriptableObject
 {
-    public int SegmentCount;
     public float Size;
 
     #region Physical Properties

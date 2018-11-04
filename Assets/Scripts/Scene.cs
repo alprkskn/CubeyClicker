@@ -36,6 +36,8 @@ public class Scene : MonoBehaviour
     {
         var go = GameObject.CreatePrimitive(PrimitiveType.Cube);
 
+        go.transform.localScale = Vector3.one * properties.Size;
+
         go.name = "The Cube";
 
         var mr = go.GetComponent<MeshRenderer>();
@@ -72,6 +74,17 @@ public class Scene : MonoBehaviour
     private void OnClick(Vector3 clickPos)
     {
         Ray r = _mainCamera.ScreenPointToRay(clickPos);
+        RaycastHit hit;
+
+        if(Physics.Raycast(r, out hit))
+        {
+            var cube = hit.collider.gameObject.GetComponent<Cube>();
+
+            if (cube)
+            {
+                cube.Hit(hit.point, r.direction, 10f);
+            }
+        }
     }
 
 }

@@ -14,5 +14,5 @@ MonoBehaviour:
   SegmentCount: 0
   Size: 2
   Mass: 3
-  AngularDrag: 0
+  AngularDrag: 0.8
   Material: {fileID: 2100000, guid: 6e6b8f960ef59e047908b5f732c2acdb, type: 2}

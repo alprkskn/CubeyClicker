@@ -1,19 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Cube : MonoBehaviour
 {
+    private Rigidbody _rigidbody;
 
-    // Use this for initialization
-    void Start()
+    private void Awake()
     {
-
+        _rigidbody = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Hit(Vector3 position, Vector3 direction, float magnitude)
     {
-
+        // Apply torque
+        _rigidbody.AddForceAtPosition(direction * magnitude, position, ForceMode.Impulse);
     }
 }
