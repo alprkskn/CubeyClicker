@@ -11,93 +11,93 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b7931a62bb82204882fa3dfc51d530e, type: 3}
   m_Name: DefaultCubePropery
   m_EditorClassIdentifier: 
-  Size: 2
-  Mass: 3
-  AngularDrag: 3
-  Material: {fileID: 2100000, guid: 6e6b8f960ef59e047908b5f732c2acdb, type: 2}
-  Particles: {fileID: 1221442843095360, guid: 4e2a2f6d40f11ab4380100326896bb5f, type: 2}
-  FeedbackScaleCurve:
+  size: 2
+  angularDrag: 3
+  mass: 3
+  emissionColor: {r: 0.1273585, g: 1, b: 0.9909929, a: 0}
+  feedbackScaleCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0.4291098
-      outSlope: 0.4291098
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.331383
-    - serializedVersion: 3
-      time: 0.2
-      value: 0.007394409
-      inSlope: -0.046901997
-      outSlope: -0.046901997
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 1
-      outWeight: 0
-    - serializedVersion: 3
-      time: 0.5103666
-      value: 0.36454844
-      inSlope: -1.5008934
-      outSlope: -1.5008934
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 1
-      outWeight: 0.6684774
-    - serializedVersion: 3
-      time: 0.9998605
-      value: 0
+      time: -0.0062893084
+      value: 0.012499999
       inSlope: 0
       outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  FeedbackEmissionCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0.23872747
-      outSlope: 0.23872747
-      tangentMode: 0
+      tangentMode: 136
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.21109574
+      outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.21502686
-      value: 0.10115731
+      time: 0.17551552
+      value: 0.3991415
       inSlope: 0
       outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.43043977
+      value: 0.15200025
+      inSlope: -0.85504144
+      outSlope: -0.85504144
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.5916132
-      value: 0.008671157
-      inSlope: -0.066521406
-      outSlope: -0.066521406
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.16816683
-    - serializedVersion: 3
-      time: 0.99788225
-      value: -0.000001527369
+      time: 0.73225963
+      value: 0.014496803
       inSlope: 0
       outSlope: 0
-      tangentMode: 0
+      tangentMode: 136
       weightedMode: 0
-      inWeight: 0
-      outWeight: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.99580705
+      value: 0.018749999
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  EmissionColor: {r: 0, g: 1, b: 0.9690397, a: 1}
+  feedbackEmissionCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: -0.002096436
+      value: 0.018749999
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.40808344
+      value: 0.124563545
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.98742133
+      value: -0.012499999
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  material: {fileID: 2100000, guid: 6e6b8f960ef59e047908b5f732c2acdb, type: 2}
+  particles: {fileID: 1221442843095360, guid: 4e2a2f6d40f11ab4380100326896bb5f, type: 2}

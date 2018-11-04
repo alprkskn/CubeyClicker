@@ -44,7 +44,7 @@ public class Cube : MonoBehaviour
     private IEnumerator HitFeedback(float duration)
     {
         var timer = 0f;
-
+        this.material.EnableKeyword("_EMISSION");
         while(timer < duration)
         {
             var t = timer / duration;
